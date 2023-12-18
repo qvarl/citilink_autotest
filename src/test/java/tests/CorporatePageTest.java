@@ -1,21 +1,32 @@
 package tests;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import pages.CorporatePage;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.codeborne.selenide.Configuration.*;
 
-public class CorporatePageTest extends TestBase {
-
+@DisplayName("Тест страницы Корпоратам")
+@Owner("qwarl")
+@Epic("Корпораты")
+public class CorporatePageTest extends TestBase
+{
     @BeforeEach
-    void setUp() {
+    void setUp()
+    {
         corporatePage.openPage();
     }
 
+
+    @DisplayName("Проверка выбора города проживания через спиок основных городов")
+    @Feature("Выбор города проживания")
+    @Severity(SeverityLevel.BLOCKER)
+    @Tags({@Tag("blocker"), @Tag("corporate")})
     @Test
-    void selectCityFromMainCitiesListTest() {
-        String city = "Краснодар";
+    void selectCityFromMainCitiesListTest()
+    {
+        String city = data.randomMainCity ;
 
         corporatePage.
                 openCitiesSelector().
@@ -23,21 +34,47 @@ public class CorporatePageTest extends TestBase {
                 checkCurrentCityName(city);
     }
 
+
+    @DisplayName("Проверка перехода на страницу 'Журнал' по ссылке")
+    @Feature("Переход по ссылке")
+    @Severity(SeverityLevel.CRITICAL)
+    @Tags({@Tag("critical"), @Tag("corporate"), @Tag("magazine")})
     @Test
-    void transitionByMagazineHeaderTopLinkTest() {
+    void transitionByMagazineHeaderTopLinkTest()
+    {
         corporatePage.openJournaPage();
     }
 
-    @Test
-    void transitionByCatalogMenuLinksTest() {
-        String category = "Бытовая техника";
-        String expectedUel = baseUrl + "/catalog/bytovaya-tehnika-dlya-doma-i-kuhni/?ref=mainmenu";
+
+    @CsvSource({
+            "'Телевизоры, аудио-видео, фото', televizory-audio-video-hi-fi",
+            "Смартфоны и гаджеты, smartfony-i-gadzhety",
+            "Ноутбуки и компьютеры, noutbuki-i-kompyutery"
+    })
+
+    @ParameterizedTest(name = "При переходе на страницу категори {0} URL должен содержать строку {1}")
+    @DisplayName("Параметраризированный тест|")
+    @Feature("Переход по ссылке")
+    @Severity(SeverityLevel.BLOCKER)
+    @Tags(
+            {@Tag("critical"), @Tag("corporate"), @Tag("televizory-audio-video-hi-fi"), @Tag("smartfony-i-gadzhety"),
+            @Tag("noutbuki-i-kompyutery") })
+    void transitionByCatalogMenuLinksTest(
+            String category,
+            String expectedUelString
+    ){
+        String expectedUel = baseUrl + "/catalog/" + expectedUelString + "/?ref=mainmenu";
 
         corporatePage.
                 openCatalog().
                 selectCategory(category, expectedUel);
     }
 
+
+    @DisplayName("Проверка появления ошибки при вводе пустой почты")
+    @Feature("Регистрация почты")
+    @Severity(SeverityLevel.NORMAL)
+    @Tags({@Tag("normal"), @Tag("corporate")})
     @Test
     void displaySubscribeErrorTest() {
         corporatePage.
@@ -45,13 +82,25 @@ public class CorporatePageTest extends TestBase {
                 emptyEmailWarningCheck();
     }
 
+
+    @DisplayName("Проверка выбора города проживания через спиок основных городов")
+    @Feature("Переход по ссылке")
+    @Severity(SeverityLevel.CRITICAL)
+    @Tags({@Tag("critical"), @Tag("corporate")})
     @Test
-    void transitionByMainLogoLinkTest() {
+    void transitionByMainLogoLinkTest()
+    {
         corporatePage.mainLogoClick();
     }
 
+
+    @DisplayName("Проверка скачивания PDF файла")
+    @Feature("Скачивание файла")
+    @Severity(SeverityLevel.MINOR)
+    @Tags({@Tag("minor"), @Tag("corporate")})
     @Test
-    void workEconomicDepartmentPdfParseTest() throws Exception {
+    void workEconomicDepartmentPdfParseTest() throws Exception
+    {
         corporatePage.
                 pdfDownload().
                 pdfTextCheck();

@@ -1,33 +1,36 @@
 package tests;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
 
-import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.*;
-
+@DisplayName("Тест страницы Смартфоны")
+@Owner("qwarl")
+@Epic("Смартфоны")
+@Feature("Добавление в корзину")
 public class SmartfonyPageTest extends TestBase {
 
     @BeforeEach
-    void setUp() {smartfonyPage.openPage();}
+    void setUp() {
+        smartfonyPage.openPage();
+    }
 
+
+    @DisplayName("Проверка добавления смартфона в корзину")
+    @Severity(SeverityLevel.BLOCKER)
+    @Tags({@Tag("blocker"), @Tag("smartfony")})
     @Test
-    void name() {
-        int smartfonListIndex = 43;
-        int serviceListIndex = 2;
-                String serviseYear = "1 год";
+     void addSmartfonToCart() {
+        int smartfonIndex =data.randomProductHorizontalSnippetIndex ;
+        int serviceIndex = data.randomServiceIndex;
+        String serviseYearCount = data.serviseYearCount;
 
-   smartfonyPage.
-           getSmartfonyPrice(smartfonListIndex).
-           addSmartfonToCart(smartfonListIndex).
-           addService(serviceListIndex, serviseYear).
-           getServicePrice(serviceListIndex).
-           openCartFromPopupServicePrice().getFinalPrice().checkFinalPrice();
-
-
-
-
-
+        smartfonyPage.
+                getSmartfonyPrice(smartfonIndex).
+                addSmartfonToCart(smartfonIndex).
+                addService(serviceIndex, serviseYearCount).
+                getServicePrice(serviceIndex).
+                openCartFromPopupServicePrice().
+                getFinalPrice().
+                checkFinalPrice();
     }
 }
