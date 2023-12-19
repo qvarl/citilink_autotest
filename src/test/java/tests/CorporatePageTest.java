@@ -53,9 +53,9 @@ public class CorporatePageTest extends TestBase
     })
 
     @ParameterizedTest(name = "При переходе на страницу категори {0} URL должен содержать строку {1}")
-    @DisplayName("Параметраризированный тест|")
+    @DisplayName("Параметраризированный тест |")
     @Feature("Переход по ссылке")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Tags(
             {@Tag("critical"), @Tag("corporate"), @Tag("televizory-audio-video-hi-fi"), @Tag("smartfony-i-gadzhety"),
             @Tag("noutbuki-i-kompyutery") })

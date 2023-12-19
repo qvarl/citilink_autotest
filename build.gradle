@@ -57,3 +57,24 @@ task blocker_test(type: Test) {
         includeTags("blocker")
     }
 }
+
+task critical_test(type: Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("critical")
+    }
+}
+
+task corporate_test(type: Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("corporate")
+    }
+}
+
+task smartfony_test(type: Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("smartfony")
+    }
+}
