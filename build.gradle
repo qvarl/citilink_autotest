@@ -50,3 +50,10 @@ tasks.withType(Test) {
 test {
     useJUnitPlatform()
 }
+
+task blocker_test(type: Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform {
+        includeTags("blocker")
+    }
+}
