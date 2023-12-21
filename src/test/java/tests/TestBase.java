@@ -23,11 +23,11 @@ public class TestBase
     static void setEnvironment()
     {
         baseUrl = "https://www.citilink.ru";
-        pageLoadTimeout = 40000;
+        pageLoadTimeout = 50000;
         browser = System.getProperty("browser", "chrome");
         browserVersion = System.getProperty("browserVersion", "100.0");
-        browserSize = System.getProperty("browserSize", "1920x1080");
-        remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        browserSize = System.getProperty("browserSize", "1920x1080");;
+        remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

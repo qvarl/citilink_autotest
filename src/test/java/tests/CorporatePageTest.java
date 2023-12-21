@@ -83,7 +83,7 @@ public class CorporatePageTest extends TestBase
     }
 
 
-    @DisplayName("Проверка выбора города проживания через спиок основных городов")
+    @DisplayName("Проверка прехода на главную страницу при нажатии на логотип")
     @Feature("Переход по ссылке")
     @Severity(SeverityLevel.CRITICAL)
     @Tags({@Tag("critical"), @Tag("corporate")})
