@@ -25,9 +25,8 @@ public class TestBase
         baseUrl = "https://www.citilink.ru";
         pageLoadTimeout = 50000;
         browser = System.getProperty("browser", "chrome");
-        browserVersion = System.getProperty("browserVersion", "100.0");
         browserSize = System.getProperty("browserSize", "1920x1080");;
-        remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        remote = System.getProperty("remote", null);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
