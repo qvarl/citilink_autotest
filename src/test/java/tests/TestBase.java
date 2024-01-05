@@ -24,6 +24,7 @@ public class TestBase
     {
         baseUrl = "https://www.citilink.ru";
         pageLoadTimeout = 50000;
+        browserVersion ="100.0";
         browser = System.getProperty("browser", "chrome");
         browserSize = System.getProperty("browserSize", "1920x1080");;
         remote = System.getProperty("remote", null);

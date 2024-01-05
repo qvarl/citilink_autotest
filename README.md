@@ -3,23 +3,20 @@
 <img  src="images/screenshots/img.png">
 </p>
 
-## Содержание
+## Содержание :receipt:
 
 * <a href="#description">Описание</a>
 * <a href="#tools">Технологии и инструменты</a>
 * <a href="#cases">Реализованные проверки</a>
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
-* <a href="#allure">Отчеты в Allure</a>
+* <a href="#allure">Отчеты в Allure Report</a>
 * <a href="#testops">Интеграция с Allure TestOps</a>
-* <a href="#testops">Интеграция с Jira</a>
 * <a href="#telegram">Уведомления в Telegram с использованием бота</a>
-* <a href="#selenoidvideo">Пример прогона теста в Selenoid</a>
-* <a href="#browserstackvideo">Пример прогона теста в Browserstack</a>
-
+* <a href="#selenoid">Пример прогона теста в Selenoid</a>
 
 <a id="description"></a>
-## Описание
+## Описание :speech_balloon:
 
 Данный проект состоит из автоматизированных UI-тестов для веб-сайта [citilink.ru](https://www.citilink.ru/)
 
@@ -37,7 +34,6 @@
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/logo/Jenkins.svg" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/Allure.svg" width="50"/></a>
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/Allure_TO.svg" width="50"/></a>
-<a href="https://www.atlassian.com/software/jira"><img alt="Jira" height="50" src="images/logo/Jira.svg" width="50"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.svg" width="50"/></a>
 </div>
 
@@ -109,27 +105,39 @@ clean test \
 <img  src="images/screenshots/img_1.png">
 </p>
 
-## Отчеты в [Allure Report](https://jenkins.autotests.cloud/job/Project%20009_viktor_jenkins_First_test/allure)
+<a id="allure"></a>
+## Отчеты в [Allure Report](https://jenkins.autotests.cloud/job/Project%20009_viktor_jenkins_First_test/allure) <img src="images/logo/Allure.svg" width="35" height="35"/>
 ### Основное окно
 
 <p align="center">
-<img src="images/screenshots/AllureOverview.png">
+<img src="images/screenshots/img_2.png.">
 </p>
 
 ### Тесты
 
 <p align="center">
-<img src="images/screenshots/AllureBehaviors.png">
+<img src="images/screenshots/img_3.png.">
 </p>
 
 ### Графики
 
 <p align="center">
-<img src="images/screenshots/AllureGraphs.png">
+<img src="images/screenshots/img_4.png.">
 </p>
 
+<a id="testops"></a>
+## Интеграция с [Allure TestOps](https://qameta.io) <img src="images/logo/Allure_TO.svg" width="35" height="35"/>
+
 <a id="telegram"></a>
-## Уведомления в [Telegram](https://web.telegram.org) с использованием бота
+## Уведомления в [Telegram](https://web.telegram.org) с использованием бота <img src="images/logo/Telegram.svg" width="35" height="35"/>
 <p align="center">
-(скрин)
+<img src="images/screenshots/img_5.png.">
+</p>
+
+<a id="selenoid"></a>
+## Пример прогона теста в [Selenoid](https://aerokube.com/selenoid/) <img src="images/logo/Selenoid.svg" width="35" height="35"/>
+
+> К каждому тесту в отчете прилагается видео
+<p align="center">
+  <img title="Selenoid Video" src="images/video/selenoid.gif">
 </p>
