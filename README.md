@@ -11,7 +11,6 @@
 * <a href="#console">Запуск тестов из терминала</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
 * <a href="#allure">Отчеты в Allure Report</a>
-* <a href="#testops">Интеграция с Allure TestOps</a>
 * <a href="#telegram">Уведомления в Telegram с использованием бота</a>
 * <a href="#selenoid">Пример прогона теста в Selenoid</a>
 
@@ -33,7 +32,6 @@
 <a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="images/logo/Selenoid.svg" width="50"/></a>
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/logo/Jenkins.svg" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/Allure.svg" width="50"/></a>
-<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/Allure_TO.svg" width="50"/></a>
 <a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.svg" width="50"/></a>
 </div>
 
@@ -42,7 +40,6 @@
 Для UI-тестов использован фреймворк <code>Selenide</code>.
 Запуск тестов можно осуществлять локально или с помощью <code>Selenoid</code>.
 Также реализована сборка в <code>Jenkins</code> с формированием отчета в <code>Allure</code> и отправкой уведомления с результатами в <code>Telegram</code> после завершения прогона.
-В качестве системы управления тестированием выбран <code>Allure TestOps</code>.
 
 Allure-отчет включает в себя:
 
@@ -54,8 +51,6 @@ Allure-отчет включает в себя:
 
 <a id="cases"></a>
 ## Реализованные проверки :male_detective:
-
-### Автоматизированные проверки
 - ✓ Проверка выбора города проживания через спиок основных городов
 
 - ✓ Проверка перехода на страницу 'Журнал' по ссылке
@@ -69,9 +64,6 @@ Allure-отчет включает в себя:
 - ✓ Проверка скачивания PDF файла
 
 - ✓ Проверка добавления смартфона в корзину
-
-### Ручные проверки
-- ✓ Проверка перехода по рекламной ссылке
 
 <a id="console"></a>
 ##  Запуск тестов из терминала :rocket:
@@ -116,7 +108,7 @@ clean test \
 ### Тесты
 
 <p align="center">
-<img src="images/screenshots/img_3.png.">
+<img src="images/screenshots/img_3.png">
 </p>
 
 ### Графики
@@ -124,9 +116,6 @@ clean test \
 <p align="center">
 <img src="images/screenshots/img_4.png">
 </p>
-
-<a id="testops"></a>
-## Интеграция с [Allure TestOps](https://qameta.io) <img src="images/logo/Allure_TO.svg" width="35" height="35"/>
 
 <a id="telegram"></a>
 ## Уведомления в [Telegram](https://web.telegram.org) с использованием бота <img src="images/logo/Telegram.svg" width="35" height="35"/>
