@@ -110,7 +110,7 @@ clean test \
 ### Основное окно
 
 <p align="center">
-<img src="images/screenshots/img_2.png.">
+<img src="images/screenshots/img_2.png">
 </p>
 
 ### Тесты
@@ -122,7 +122,7 @@ clean test \
 ### Графики
 
 <p align="center">
-<img src="images/screenshots/img_4.png.">
+<img src="images/screenshots/img_4.png">
 </p>
 
 <a id="testops"></a>
@@ -131,7 +131,7 @@ clean test \
 <a id="telegram"></a>
 ## Уведомления в [Telegram](https://web.telegram.org) с использованием бота <img src="images/logo/Telegram.svg" width="35" height="35"/>
 <p align="center">
-<img src="images/screenshots/img_5.png.">
+<img src="images/screenshots/img_5.png">
 </p>
 
 <a id="selenoid"></a>
